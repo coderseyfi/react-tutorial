@@ -1,17 +1,48 @@
-import React from 'react';
+import React from "react";
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import './index.css'
+
+const firstBook = {
+    author: 'Dav Pilkey',
+    title: 'Dog Man: Twenty Thousand Fleas Under the Sea',
+    img: '../images/book-1.jpg'
+}
+
+const secondBook = {
+    author: 'James Clear',
+    title: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, velit?',
+    img: '../images/amazon1.jpg'
+}
+
+const BookList = () => {
+    return <section className='booklist'>
+        <Book
+            author={firstBook.author}
+            title={firstBook.itle}
+            img={firstBook.img} />
+        <Book
+            author={secondBook.author}
+            title={secondBook.title}
+            img={secondBook.img} />
+    </section>
+}
+
+
+const Book = (props) => {
+    console.log(props);
+    return <article className='book'>
+        <img src={props.img} alt="picture" />
+        <h2>{props.title}</h2>
+        <h4>
+            {props.author}
+        </h4>
+    </article>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <BookList />
+)
