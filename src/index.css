@@ -22,6 +22,7 @@ body {
 @media screen and (min-width: 768px) {
   .booklist {
     grid-template-columns: repeat(3, 1fr);
+    align-items: start;
   }
 }
 
@@ -30,6 +31,8 @@ body {
   border-radius: 1rem;
   padding: 2rem;
   text-align: center;
+  position: relative;
+  min-height: 350px;
 }
 
 .book img {
@@ -44,7 +47,30 @@ body {
 
 .book h4 {
   color: '#617d98';
-  font-size: '1rem';
-  margin-top: '0.5rem';
+  font-size: 1rem;
+  margin-top: 1rem;
   letter-spacing: 2px;
+  color: #c35600;
+}
+
+.book p {
+  margin: 1rem 0 0.5rem;
+}
+
+.number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: #c35600;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 4rem;
+  text-transform: capitalize;
 }
